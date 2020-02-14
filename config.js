@@ -20,15 +20,20 @@ module.exports = {
       name: 'Github',
       url: 'https://github.com/adamjarling',
     },
-    // {
-    //   icon: 'fa-twitter',
-    //   name: 'Twitter',
-    //   url: 'https://twitter.com/onlyanubhav',
-    // },
+    {
+      icon: 'fa-instagram',
+      name: 'Instagram',
+      url: 'https://www.instagram.com/adamjarling/',
+    },
     {
       icon: 'fa-facebook',
       name: 'Facebook',
       url: 'https://facebook.com/adamarling',
+    },
+    {
+      icon: 'fa-linkedin',
+      name: 'Linked In',
+      url: 'https://www.linkedin.com/in/adamjarling/',
     },
     {
       icon: 'fa-envelope-o',
