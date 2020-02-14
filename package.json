@@ -1,14 +1,14 @@
 {
-  "name": "gatsby-starter-solidstate",
+  "name": "adamarling-gatsby",
   "version": "0.0.1",
-  "description": "Gatsby.js V2 starter template based on Solid State by HTML5 UP",
+  "description": "Adam J. Arling website",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/anubhavsrivastava/gatsby-starter-solidstate.git"
+    "url": "git+https://github.com/adamjarling/adamarling-gatsby.git"
   },
   "author": {
-    "name": "Anubhav Srivastava",
-    "email": "anubhav.srivastava00@gmail.com"
+    "name": "Adam J. Arling",
+    "email": "aarling@gmail.com"
   },
   "dependencies": {
     "gatsby": "^2.4.3",
@@ -43,9 +43,5 @@
     "gatsby-starter",
     "gatsby-starter-solidstate"
   ],
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/anubhavsrivastava/gatsby-starter-solidstate/issues"
-  },
-  "homepage": "https://github.com/anubhavsrivastava/gatsby-starter-solidstate#readme"
+  "license": "MIT"
 }
