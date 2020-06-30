@@ -1,0 +1,32 @@
+@import "../../node_modules/bulma/sass/utilities/initial-variables.sass";
+@import url("https://fonts.googleapis.com/css2?family=Montserrat+Subrayada:wght@400;700&family=Slabo+27px&display=swap");
+
+/*
+font-family: 'Montserrat Subrayada', sans-serif;
+font-family: 'Slabo 27px', serif;
+*/
+
+$fontHeadline: "Montserrat Subrayada", sans-serif;
+
+// $body-background-color: #000;
+$family-primary: "Slabo 27px", serif;
+$family-secondary: "Montserrat Subrayada", sans-serif;
+
+$button-family: $family-secondary;
+
+$body-size: 18px;
+
+$navbar-background-color: black;
+$navbar-item-color: white;
+
+// $content-heading-color: $white;
+
+// $footer-background-color: $black;
+// $footer-color: white;
+
+// $link: white;
+// $link-hover: #ccc;
+
+//$title-color: $white;
+$title-family: $family-secondary;
+$title-size: $size-2;

@@ -1,63 +1,84 @@
-import React from 'react';
-import { Link } from 'gatsby';
+import React, { useState } from "react";
+import { FaInstagram, FaFacebook, FaEnvelope, FaYoutube } from "react-icons/fa";
+import { Link } from "gatsby";
 
-export default function Nav({ onMenuToggle = () => {} }) {
+var socialMedia = [
+  {
+    service: "Instagram",
+    url: "https://www.instagram.com/furbaby_rocks/",
+    icon: <FaInstagram />,
+  },
+  {
+    service: "YouTube",
+    url: "https://www.youtube.com/channel/UCSoulFKYB6zGzHhbV-rkPzg",
+    icon: <FaYoutube />,
+  },
+  {
+    service: "Facebook",
+    url: "https://www.facebook.com/adam.arling",
+    icon: <FaFacebook />,
+  },
+  {
+    service: "Email",
+    url: "mailto:aarling@gmail.com",
+    icon: <FaEnvelope />,
+  },
+];
+
+export default function Nav() {
+  const [burgerOpen, setBurgerOpen] = useState();
+
+  const handleClick = () => {
+    setBurgerOpen(!burgerOpen);
+  };
+
   return (
-    <nav id="menu">
-      <div className="inner">
-        <h2>Menu</h2>
-        <ul className="links">
-          <li>
-            <Link
-              onClick={e => {
-                onMenuToggle();
-              }}
-              to="/"
-            >
-              Home
-            </Link>
-          </li>
-          {/* <li>
-            <Link
-              onClick={e => {
-                onMenuToggle();
-              }}
-              to="/Generic"
-            >
-              Generic Page
-            </Link>
-          </li> */}
-          {/* <li>
-            <Link
-              onClick={e => {
-                onMenuToggle();
-              }}
-              to="/Bands"
-            >
-              Bands
-            </Link>
-          </li> */}
-          {/* <li>
-            <Link
-              onClick={e => {
-                onMenuToggle();
-              }}
-              to="/Elements"
-            >
-              Elements
-            </Link>
-          </li> */}
-        </ul>
-        <a
-          className="close"
-          onClick={e => {
-            e.preventDefault();
-            onMenuToggle();
-          }}
-          href="#menu"
+    <nav
+      className="navbar is-black"
+      role="navigation"
+      aria-label="main navigation"
+    >
+      <div className="navbar-brand">
+        <Link
+          to="/"
+          className="navbar-item is-size-4 has-text-primary is-family-secondary"
         >
-          {''}
+          Adam J. Arling
+        </Link>
+
+        <a
+          role="button"
+          className={`navbar-burger burger ${burgerOpen ? "is-active" : ""}`}
+          aria-label="menu"
+          aria-expanded={`${burgerOpen ? "true" : "false"}`}
+          data-target="navbarBasicExample"
+          onClick={handleClick}
+        >
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
         </a>
+      </div>
+
+      <div
+        id="navbarBasicExample"
+        className={`navbar-menu ${burgerOpen ? "is-active" : ""}`}
+      >
+        <div className="navbar-end">
+          {socialMedia.map((sm) => (
+            <div key={sm.service} className="navbar-item">
+              <a
+                href={sm.url}
+                className="is-flex"
+                target="_blank"
+                style={{ alignItems: "center" }}
+                title={sm.service}
+              >
+                <span className="icon is-size-4">{sm.icon}</span>
+              </a>
+            </div>
+          ))}
+        </div>
       </div>
     </nav>
   );
