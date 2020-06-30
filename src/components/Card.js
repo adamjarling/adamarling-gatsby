@@ -1,20 +1,22 @@
 import React from "react";
+import Img from "gatsby-image";
+import ExternalLink from "./ExternalLink";
 
-export default function Card() {
+export default function Card({ title, url, description, fluid }) {
   return (
-    <div className="card">
+    <div className="card my-6">
       <div className="card-image">
-        <figure className="image is-4by3">
-          <img
-            src="https://bulma.io/images/placeholders/1280x960.png"
-            alt="Placeholder image"
-          />
+        <figure className="image">
+          <Img fluid={fluid} />
         </figure>
       </div>
       <div className="card-content">
         <div className="content">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus nec
-          iaculis mauris. <a>@bulmaio</a>.
+          <h3>{title}</h3>
+          <p>
+            <ExternalLink url={url}>{url}</ExternalLink>
+          </p>
+          <p>{description}</p>
         </div>
       </div>
     </div>
