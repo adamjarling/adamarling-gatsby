@@ -6,7 +6,7 @@ import styled from "styled-components";
 const HeroAbout = ({ className }) => {
   var data = useStaticQuery(graphql`
     query {
-      desktop: file(relativePath: { eq: "adam-flannel.jpg" }) {
+      desktop: file(relativePath: { eq: "logan-corner.jpg" }) {
         childImageSharp {
           fluid(quality: 90, maxWidth: 1920, grayscale: false) {
             ...GatsbyImageSharpFluid_withWebp
@@ -24,10 +24,14 @@ const HeroAbout = ({ className }) => {
     >
       <div className="hero-body">
         <div className="container">
-          <h2 className="title">Adam J. Arling</h2>
-          <h3 className="subtitle">
-            Recording Engineer, Live &amp; Studio Musician, UI/JavaScript
-            developer
+          <h2 className="title has-text-white">
+            <span className="has-background-black py3 px5">Adam J. Arling</span>
+          </h2>
+          <h3 className="subtitle has-text-white">
+            <span className="has-background-black py3 px5">
+              Recording Engineer, Live &amp; Studio Musician, UI/JavaScript
+              developer
+            </span>
           </h3>
         </div>
       </div>
@@ -37,9 +41,9 @@ const HeroAbout = ({ className }) => {
 
 const StyledBackgroundSection = styled(HeroAbout)`
   color: white;
-  &:before {
+  /* &:before {
     opacity: 0.5 !important;
-  }
+  } */
 `;
 
 export default StyledBackgroundSection;

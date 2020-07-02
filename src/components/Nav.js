@@ -1,27 +1,61 @@
 import React, { useState } from "react";
-import { FaInstagram, FaFacebook, FaEnvelope, FaYoutube } from "react-icons/fa";
+import {
+  FaInstagram,
+  FaFacebook,
+  FaEnvelope,
+  FaGithub,
+  FaLinkedin,
+} from "react-icons/fa";
 import { Link } from "gatsby";
 
-var socialMedia = [
+// var socialMedia = [
+//   {
+//     service: "Instagram",
+//     url: "https://www.instagram.com/furbaby_rocks/",
+//     icon: <FaInstagram />,
+//   },
+//   {
+//     service: "YouTube",
+//     url: "https://www.youtube.com/channel/UCSoulFKYB6zGzHhbV-rkPzg",
+//     icon: <FaYoutube />,
+//   },
+//   {
+//     service: "Facebook",
+//     url: "https://www.facebook.com/adam.arling",
+//     icon: <FaFacebook />,
+//   },
+//   {
+//     service: "Email",
+//     url: "mailto:aarling@gmail.com",
+//     icon: <FaEnvelope />,
+//   },
+// ];
+
+var socialLinks = [
   {
-    service: "Instagram",
-    url: "https://www.instagram.com/furbaby_rocks/",
+    icon: <FaGithub />,
+    service: "Github",
+    url: "https://github.com/adamjarling",
+  },
+  {
     icon: <FaInstagram />,
+    service: "Instagram",
+    url: "https://www.instagram.com/adamjarling/",
   },
   {
-    service: "YouTube",
-    url: "https://www.youtube.com/channel/UCSoulFKYB6zGzHhbV-rkPzg",
-    icon: <FaYoutube />,
-  },
-  {
-    service: "Facebook",
-    url: "https://www.facebook.com/adam.arling",
     icon: <FaFacebook />,
+    service: "Facebook",
+    url: "https://facebook.com/adamarling",
   },
   {
+    icon: <FaLinkedin />,
+    service: "Linked In",
+    url: "https://www.linkedin.com/in/adamjarling/",
+  },
+  {
+    icon: <FaEnvelope />,
     service: "Email",
     url: "mailto:aarling@gmail.com",
-    icon: <FaEnvelope />,
   },
 ];
 
@@ -65,7 +99,7 @@ export default function Nav() {
         className={`navbar-menu ${burgerOpen ? "is-active" : ""}`}
       >
         <div className="navbar-end">
-          {socialMedia.map((sm) => (
+          {socialLinks.map((sm) => (
             <div key={sm.service} className="navbar-item">
               <a
                 href={sm.url}

@@ -1,6 +1,15 @@
 import React from "react";
 import Card from "./Card";
 import { useStaticQuery, graphql } from "gatsby";
+import n from "../images/northwestern-thumbnail.jpg";
+import styled from "styled-components";
+
+const NImage = styled.img`
+  float: left;
+  height: 85px;
+  width: auto;
+  padding-right: 1rem;
+`;
 
 export default function Portfolio() {
   var data = useStaticQuery(graphql`
@@ -181,9 +190,15 @@ export default function Portfolio() {
                 designs and verifying code. Prepared to offer React, JavaScript
                 and UX abilities in challenging roles.
               </p>
+
               <p>
-                I currently work for{" "}
-                <a href="https://www.library.northwestern.edu/" target="_blank">
+                <NImage src={n} alt="Northwestern University" />I currently work
+                for{" "}
+                <a
+                  href="https://www.library.northwestern.edu/"
+                  target="_blank"
+                  className="has-text-white"
+                >
                   Northwestern University Libraries Repository and Digital
                   Curation department,
                 </a>{" "}
@@ -195,7 +210,9 @@ export default function Portfolio() {
               <Card key={item.title} {...item} />
             ))}
             <div className="content">
-              <button className="button is-fullwidth">View All</button>
+              <button className="button is-fullwidth">
+                View All (Coming soon)
+              </button>
             </div>
           </div>
         </div>

@@ -40,6 +40,41 @@ export default function Music() {
           }
         }
       }
+      mary: file(relativePath: { eq: "maryRules.jpg" }) {
+        childImageSharp {
+          fluid(quality: 90, maxWidth: 1600, grayscale: false) {
+            ...GatsbyImageSharpFluid
+          }
+        }
+      }
+      emo: file(relativePath: { eq: "adam-emo.jpg" }) {
+        childImageSharp {
+          fluid(quality: 90, maxWidth: 1600, grayscale: false) {
+            ...GatsbyImageSharpFluid
+          }
+        }
+      }
+      stage: file(relativePath: { eq: "adam-stage.jpg" }) {
+        childImageSharp {
+          fluid(quality: 90, maxWidth: 1600, grayscale: false) {
+            ...GatsbyImageSharpFluid
+          }
+        }
+      }
+      blues: file(relativePath: { eq: "blues-heaven.jpg" }) {
+        childImageSharp {
+          fluid(quality: 90, maxWidth: 1600, grayscale: false) {
+            ...GatsbyImageSharpFluid
+          }
+        }
+      }
+      mexico: file(relativePath: { eq: "BSVT6000.JPG" }) {
+        childImageSharp {
+          fluid(quality: 90, maxWidth: 1600, grayscale: false) {
+            ...GatsbyImageSharpFluid
+          }
+        }
+      }
     }
   `);
 
@@ -73,13 +108,25 @@ export default function Music() {
             <Img fluid={data.uo.childImageSharp.fluid} />
           </figure>
           <figure className="image">
+            <Img fluid={data.blues.childImageSharp.fluid} />
+          </figure>
+          <figure className="image">
             <Img fluid={data.nikki.childImageSharp.fluid} />
           </figure>
           <figure className="image">
             <Img fluid={data.studio.childImageSharp.fluid} />
           </figure>
           <figure className="image">
+            <Img fluid={data.mexico.childImageSharp.fluid} />
+          </figure>
+          <figure className="image">
             <Img fluid={data.sturgis.childImageSharp.fluid} />
+          </figure>
+          <figure className="image">
+            <Img fluid={data.emo.childImageSharp.fluid} />
+          </figure>
+          <figure className="image">
+            <Img fluid={data.stage.childImageSharp.fluid} />
           </figure>
         </div>
       </div>
