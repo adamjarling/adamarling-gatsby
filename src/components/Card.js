@@ -2,9 +2,9 @@ import React from "react";
 import Img from "gatsby-image";
 import ExternalLink from "./ExternalLink";
 
-export default function Card({ title, url, description, fluid }) {
+export default function Card({ title, url, description, fluid, tags = [] }) {
   return (
-    <div className="card my-6">
+    <div className="card">
       <div className="card-image">
         <figure className="image">
           <Img fluid={fluid} />
@@ -17,6 +17,11 @@ export default function Card({ title, url, description, fluid }) {
             <ExternalLink url={url}>{url}</ExternalLink>
           </p>
           <p>{description}</p>
+          <p>
+            {tags.map((tag) => (
+              <span className="tag is-primary mr-1">{tag}</span>
+            ))}
+          </p>
         </div>
       </div>
     </div>

@@ -1,22 +1,20 @@
 import React from "react";
 import Layout from "../components/Layout";
-import HomeHero from "../components/heros/Home";
-import Portfolio from "../components/Portfolio";
-import Music from "../components/Music";
 import Seo from "../components/Seo";
+import HomeSlider from "../components/HomeSlider";
+import RockingHero from "../components/heros/Rocking";
+import CodingHero from "../components/heros/Coding";
+import WritingHero from "../components/heros/Writing";
+import SectionReachingOut from "../components/SectionReachingOut";
 
 const IndexPage = () => (
   <Layout>
     <Seo title="Home" />
-    <HomeHero />
-    <div className="columns">
-      <div className="column">
-        <Portfolio />
-      </div>
-      <div className="column">
-        <Music />
-      </div>
-    </div>
+    <HomeSlider />
+    <CodingHero />
+    <RockingHero />
+    <WritingHero />
+    <SectionReachingOut />
   </Layout>
 );
 

@@ -91,6 +91,27 @@ export default function Portfolio() {
           }
         }
       }
+      rollingLive: file(relativePath: { eq: "portfolio-rolling-live.jpg" }) {
+        childImageSharp {
+          fluid(quality: 90, maxWidth: 1600, grayscale: false) {
+            ...GatsbyImageSharpFluid
+          }
+        }
+      }
+      loud: file(relativePath: { eq: "portfolio-loud.jpg" }) {
+        childImageSharp {
+          fluid(quality: 90, maxWidth: 1600, grayscale: false) {
+            ...GatsbyImageSharpFluid
+          }
+        }
+      }
+      flatts: file(relativePath: { eq: "portfolio-flatts.jpg" }) {
+        childImageSharp {
+          fluid(quality: 90, maxWidth: 1600, grayscale: false) {
+            ...GatsbyImageSharpFluid
+          }
+        }
+      }
     }
   `);
 
@@ -101,6 +122,7 @@ export default function Portfolio() {
       description:
         "GatsbyJS, React, and Netlify CMS power this new website for pop sensation ABBARAMA.",
       fluid: data.abbarama.childImageSharp.fluid,
+      tags: ["GatsbyJS", "React", "CSS", "Netlify CMS"],
     },
     {
       title: "Northwestern Libraries Digital Collections",
@@ -108,6 +130,31 @@ export default function Portfolio() {
       description:
         "React/Redux discovery application architected from the ground-up. Hits an AWS Elasticsearch index, reads IIIF manifests, and utilizes ReactiveSearch for faceting & search.",
       fluid: data.nulib.childImageSharp.fluid,
+      tags: ["AWS", "ElasticSearch", "API", "React", "Redux"],
+    },
+    {
+      title: "LOUD Sweden",
+      url: "https://loudsweden.com",
+      description:
+        "Gatsby / React / Design & Development of LOUD Sweden Music education program. A non-profit, community building organization that provides after-school programs which allow kids to form their own bands and learn keyboards, bass, drums and guitar.",
+      fluid: data.loud.childImageSharp.fluid,
+      tags: ["GatsbyJS", "React", "Sass", "Bulma", "Netlify"],
+    },
+    {
+      title: "Rolling Live Studios",
+      url: "https://rollinglivestudios.com",
+      description:
+        "Shopify site architecture which provides a platform for authenticated, ticketed access to livestream events and performances.",
+      fluid: data.rollingLive.childImageSharp.fluid,
+      tags: ["Shopify", "JavaScript"],
+    },
+    {
+      title: "Flatts and Sharpe Music Company - Shopify Store",
+      url: "https://flatts-and-sharpe.myshopify.com/",
+      description:
+        "Created a Shopify Store solution for Flatts and Sharpe's online Sheet Music sales.  Ingested over 1000 product line items into Collections and Products.  Customized the basic Shopify theme to mimic Flatts & Sharpe's existing web design, resulting in a seamless customer experience navigating from web host to the Shopify store.",
+      fluid: data.flatts.childImageSharp.fluid,
+      tags: ["Shopify", "CSS", "HTML"],
     },
     {
       title: "Trade-r",
@@ -115,6 +162,7 @@ export default function Portfolio() {
       description:
         "Cryptocurrency trading PWA which enforces disciplined trading entrances and exits. Built from the ground up with React, Firebase suite and various crypto APIs. Launch February 2020.",
       fluid: data.trader.childImageSharp.fluid,
+      tags: ["Firebase", "Crypto", "Google Cloud", "React", "API"],
     },
     {
       title: "Daredevil Pedals",
@@ -122,6 +170,7 @@ export default function Portfolio() {
       description:
         "Chicago-based fuzz pedal company making the raddest hand-wired fuzz and delay pedals on the market. Check 'em out and fuzz on.",
       fluid: data.daredevil.childImageSharp.fluid,
+      tags: ["Netlify CMS", "PayPal", "React", "HTML", "CSS"],
     },
     {
       title: "Film Independent",
@@ -173,47 +222,83 @@ export default function Portfolio() {
     },
   ];
 
+  const skills = [
+    "ES6/7+ JavaScript",
+    "React JS",
+    "Redux/Flux",
+    "GraphQL / Apollo Client",
+    "Webpack / Rollup (module bundling)",
+    "HTML5",
+    "Sketch wireframing",
+    "NPM packaging & distribution",
+    "Building component libraries",
+    "Agile workflow processes ",
+    "Git / Gitflow ",
+    "CSS / Sass / LESS",
+    "PostCSS / CSS in JS / @emotion / Styled Components",
+    "Jest - test runner",
+    "Testing Library - testing helper",
+    "Cypress - integration testing",
+    "AngularJS",
+    "Staff supervision ",
+    "Accessibility ",
+    "Responsive Design",
+  ];
+
   return (
     <>
-      <section className="hero is-dark">
-        <div className="hero-body">
-          <div className="container">
-            <h2 className="title">Portfolio</h2>
-            <h3 className="subtitle">...and web projects</h3>
-            <div className=" content">
-              <p>
-                Innovative and proactive Front-End Developer capable of
-                developing component-based, JavaScript web applications for
-                demanding clients. Talented in building front-end stacks, team
-                leadership and independent problem-solving. Highly organized
-                multitasker with expertise in scheduling projects, enhancing
-                designs and verifying code. Prepared to offer React, JavaScript
-                and UX abilities in challenging roles.
-              </p>
+      <section className="section">
+        <div className="container">
+          <div className="is-clearfix content">
+            <NImage src={n} alt="Northwestern University" />
+            <p>
+              Innovative and proactive Front-End Developer capable of developing
+              component-based, JavaScript web applications for demanding
+              clients. Talented in building front-end stacks, team leadership
+              and independent problem-solving. Highly organized multitasker with
+              expertise in scheduling projects, enhancing designs and verifying
+              code. Prepared to offer React, JavaScript and UX abilities in
+              challenging roles.
+            </p>
 
-              <p>
-                <NImage src={n} alt="Northwestern University" />I currently work
-                for{" "}
-                <a
-                  href="https://www.library.northwestern.edu/"
-                  target="_blank"
-                  className="has-text-white"
-                >
-                  Northwestern University Libraries Repository and Digital
-                  Curation department,
-                </a>{" "}
-                writing open-source, repository applications which digitize the
-                world's cultural heritage assets.
-              </p>
-            </div>
+            <p className="notification">
+              I currently work for{" "}
+              <a href="https://www.library.northwestern.edu/" target="_blank">
+                Northwestern University Libraries Repository and Digital
+                Curation department,
+              </a>{" "}
+              writing open-source, repository applications which digitize the
+              world's cultural heritage assets.
+            </p>
+          </div>
+
+          <div className="content">
+            <ul style={{ columns: "4 auto" }}>
+              {skills.map((skill) => (
+                <li key={skill}>{skill}</li>
+              ))}
+            </ul>
+          </div>
+
+          <div className="columns is-multiline">
             {portfolio.map((item) => (
-              <Card key={item.title} {...item} />
+              <div key={item.title} className="column is-half">
+                <Card {...item} />
+              </div>
             ))}
-            <div className="content">
-              <button className="button is-fullwidth">
-                View All (Coming soon)
-              </button>
-            </div>
+          </div>
+
+          <div className="content has-text-centered">
+            <p>...and a bunch more. Working on it:)</p>
+            <p>
+              <a
+                href="https://github.com/adamjarling"
+                target="_blank"
+                className="button is-primary"
+              >
+                View Work on Github
+              </a>
+            </p>
           </div>
         </div>
       </section>

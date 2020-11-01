@@ -24,7 +24,7 @@ const HeroAbout = ({ className }) => {
     >
       <div className="hero-body">
         <div className="container">
-          <h2 className="title has-text-white">
+          {/* <h2 className="title has-text-white">
             <span className="has-background-black py3 px5">Adam J. Arling</span>
           </h2>
           <h3 className="subtitle has-text-white">
@@ -32,7 +32,7 @@ const HeroAbout = ({ className }) => {
               Recording Engineer, Live &amp; Studio Musician, UI/JavaScript
               developer
             </span>
-          </h3>
+          </h3> */}
         </div>
       </div>
     </BackgroundImage>
